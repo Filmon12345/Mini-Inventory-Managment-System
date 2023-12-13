@@ -1,0 +1,23 @@
+.top-nav {
+  background: white;
+  height: 14vh;
+  text-align: center;
+  position: fixed;
+  top:0;
+  left:101px;
+  right:0;
+
+  box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+.logo {
+  height: 13vh;
+
+  /* border: 2px green solid;
+  border-top-right-radius: 30px;
+  border-top-left-radius: 30px; */
+  margin: 4px 7px;
+  padding: 5px 60px;
+
+  
+}

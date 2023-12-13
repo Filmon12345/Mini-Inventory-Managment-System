@@ -1,0 +1,72 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.searchBar {
+  position: fixed;
+  width: 30%;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 120px;
+  margin-bottom: 10px;
+  margin-right:10px;
+  z-index: 1;
+  top: 0;
+  right: 0;
+
+  background-color: #eee;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr ;
+  column-gap: 30px;
+  row-gap: 30px;
+}
+::-webkit-scrollbar {
+  width: 0;
+}
+.card {
+  overflow: hidden;
+}
+.cards-img {
+  max-width: 300px;
+  max-height: 205px;
+  object-fit: contain;
+  background-color: transparent;
+}
+
+.imgs .cards-img:hover {
+  transform: scale(1.1);
+  transition: 0.4s;
+ 
+ 
+}
+
+.product-detail {
+  padding: 5px 15px;
+  font-style: italic;
+}
+.SUFFICIENT {
+  position: fixed;
+  z-index: 1;
+  background-color: rgb(1, 113, 1);
+  color: white;
+  opacity: 0.5;
+}
+.INSUFFICIENT {
+  position: fixed;
+  z-index: 1;
+  background-color: red;
+  color: rgb(9, 28, 116);
+  opacity: 0.5;
+}
+.status {
+  width: auto !important;
+  font-size: smaller;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 3px 8px;
+  position: absolute;
+  border-bottom-right-radius: 10px;
+}

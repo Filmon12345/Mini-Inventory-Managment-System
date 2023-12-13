@@ -1,0 +1,77 @@
+body {
+  padding: 50px;
+  margin-top: 90px;
+  z-index: -1;
+}
+.menu {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  gap: 40px;
+  box-shadow: 4px 109px 7px rgba(0, 0, 0, 0.6);
+}
+.side-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  word-wrap: none;
+  white-space: nowrap;
+  padding: 1px 5px;
+  margin-top: 28.5px;
+  margin-bottom: -60px;
+  color: rgb(22, 165, 22);
+  font-weight: bold;
+}
+.hamberger {
+  border-bottom: 1px solid black;
+}
+
+.menu div:hover {
+  background-color: rgb(31, 128, 31);
+  transition: 0.4s ease-in-out;
+  color: #eee;
+}
+.menu img {
+  height: 35px;
+}
+.card {
+  display: grid;
+  grid-template-rows: 190px 1fr 70px;
+  padding-top: 20px;
+  z-index: -1;
+  margin-top: 10px;
+}
+
+.cards-img {
+  height: 180px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  
+  margin-bottom: 10px;
+}
+.card-actions img {
+  height: 45px;
+  padding: 3px;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 10px 4px;
+  background-color: #eee;
+}

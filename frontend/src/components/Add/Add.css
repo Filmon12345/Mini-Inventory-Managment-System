@@ -1,0 +1,79 @@
+body {
+  margin-left: 109px;
+  margin-top: 130px;
+ 
+}
+label {
+  word-wrap: none;
+  white-space: nowrap;
+}
+
+.addNew {
+  margin-bottom: 20px;
+  font-style: italic;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  color: #eee;
+  background-color: green;
+  border-radius: 50px;
+  max-width: 400px;
+  text-align: center;
+}
+.forms {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 100%;
+  align-items: end;
+  justify-content: left;
+  background-color: transparent ;
+
+}
+
+.forms ::placeholder{
+  padding:5px;
+  color: rgba(0, 0, 0, 0.521);
+}
+.forms input , textarea{
+  padding-left: 5px;
+  padding-top: 7px;
+  padding-bottom: 5px;
+  background-color:#eee;
+  color:black;
+  border-radius: 5px;
+  font-weight: 700;
+
+}
+
+input:hover , textarea:hover{
+background-color: transparent;
+}
+
+.forms label{
+  font-weight: 700;
+  color: rgb(1, 72, 1);
+}
+
+.btn {
+  margin: 10px;
+  background-color: green;
+  font-weight: bold;
+  margin-bottom: 300px;
+}
+.choosen-image {
+  margin-top: 10px;
+  width: 130px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.background {
+  position: fixed;
+  
+  z-index: -1;
+ 
+}
+.btn-container {
+  display: flex;
+  justify-content: end;
+}

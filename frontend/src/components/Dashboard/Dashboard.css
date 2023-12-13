@@ -1,0 +1,46 @@
+.dash-wrapper{
+    display:flex;
+    flex-direction: column;
+   justify-content: space-between;
+
+}
+
+.menu-items{
+
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1) 0 100%); 
+    text-align: center;
+    width:100%;
+    height: 100%px;
+}
+.title{
+    z-index: 5;
+    font-family:fantasy;
+    font-size: 40px; 
+    top: 50%;
+    position: absolute;
+    color:black;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color:#eee;
+  border-radius: 10px;
+  padding: 10px 10px;
+ 
+}
+.search-product{
+   
+    margin-top:10px;
+   padding: 4px 10px;
+   width: 50%;
+    border: 2px gainsboro solid;
+    border-radius: 5px;
+}
+.search-product:hover{
+  
+    border: 3px rgb(71, 67, 67) solid;
+background-color:rgb(193, 211, 204) ;
+
+}
+
+    
+
+
