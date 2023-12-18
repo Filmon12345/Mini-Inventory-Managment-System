@@ -9,15 +9,23 @@ label {
 }
 
 .addNew {
-  margin-bottom: 20px;
-  font-style: italic;
-  font-weight: bold;
+
   font-family: "Times New Roman", Times, serif;
-  color: #eee;
-  background-color: green;
-  border-radius: 50px;
+font-weight: bold;
+ 
   max-width: 400px;
   text-align: center;
+  font-size: 3rem;
+  letter-spacing: 0.9px;
+  background: linear-gradient(
+    900deg,
+    rgb(10, 223, 202) 0%,
+    rgba(31, 2, 2, 10) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  width: fit-content;
 }
 .forms {
   display: flex;
@@ -69,7 +77,6 @@ background-color: transparent;
 
 .background {
   position: fixed;
-  
   z-index: -1;
  
 }

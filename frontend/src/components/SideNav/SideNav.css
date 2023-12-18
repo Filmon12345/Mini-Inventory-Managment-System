@@ -4,6 +4,8 @@ body {
   z-index: -1;
 }
 .menu {
+  min-width: 101px;
+  max-width: 101px;
   background: white;
   display: flex;
   flex-direction: column;
@@ -16,62 +18,68 @@ body {
   box-shadow: 4px 109px 7px rgba(0, 0, 0, 0.6);
 }
 .side-title {
+ min-width:100px ;
+ min-height: 78px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  word-wrap: none;
-  white-space: nowrap;
+ 
   padding: 1px 5px;
   margin-top: 28.5px;
   margin-bottom: -60px;
   color: rgb(22, 165, 22);
-  font-weight: bold;
+font-size: smaller;
+font-weight: bold;
 }
 .hamberger {
   border-bottom: 1px solid black;
 }
 
-.menu div:hover {
-  background-color: rgb(31, 128, 31);
+.menu div:hover{
+  font-size: 9px;
   transition: 0.4s ease-in-out;
-  color: #eee;
+}
+.menu div img:hover{
+  height: 40px;
+  transition: 0.4s ease-in-out;
 }
 .menu img {
   height: 35px;
 }
-.card {
-  display: grid;
-  grid-template-rows: 190px 1fr 70px;
-  padding-top: 20px;
-  z-index: -1;
-  margin-top: 10px;
-}
+@media(max-width:1190px){
+  .menu img {
+    height: 35px;
 
-.cards-img {
-  height: 180px;
+  }
+  .side-title {
+     margin-top: 28.5px;
+     margin-bottom: -60px;
+     color: rgb(38, 137, 38);
+   font-size: 13px;
+   
+   }
 }
-
-.card-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 5px 20px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+@media(max-width:1016px){
+  .menu img {
+    height: 25px;
+  }
+  .side-title {
+    margin-top: 28.5px;
+    margin-bottom: -60px;
+    color: rgb(38, 137, 38);
+  font-size: 11px;
   
-  margin-bottom: 10px;
+  }
 }
-.card-actions img {
-  height: 45px;
-  padding: 3px;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-}
-.product-detail {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  margin: 10px 4px;
-  background-color: #eee;
+@media(max-width:800px){
+  .menu img {
+    height: 20px;
+  }
+  .side-title {
+    margin-top: 28.5px;
+    margin-bottom: -60px;
+    color: rgb(38, 137, 38);
+  font-size: 9px;
+  
+  }
 }

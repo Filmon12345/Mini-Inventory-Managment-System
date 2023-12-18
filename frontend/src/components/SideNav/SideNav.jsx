@@ -15,11 +15,11 @@ function SideNav() {
         </div>
         <div  className='side-title'>
           <a href="/add-product"><img src={addProduct} alt="" /></a>
-          <p> Add product</p>
+          <p> Add Product</p>
         </div>
         <div  className='side-title'>
           <a href="/see-store"><img src={see} alt="" /> </a>
-          <p>IN Store</p>
+          <p>IN Store </p>
         </div>
 
       </div>

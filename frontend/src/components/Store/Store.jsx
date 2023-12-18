@@ -32,7 +32,7 @@ function Store() {
     if (response.ok) {
       alert("item deleted successfully");
       fetch("http://localhost:8000/products/get", {
-        method: "GET",
+        method: "GET"
       })
         .then((res) => res.json())
         .then((products) => {
@@ -78,10 +78,10 @@ function Store() {
 
                 </div>
                 <div className="product-detail">
-                  <h2>{i.name}</h2>
+                  <h3>{i.name}</h3>
                   <h4>Category: {i.category}</h4>
-                  <p className="price">Price:{i.price}</p>
-                  <p className="Amount">Amount:{i.amount}</p>
+                  <p className="price">Price: {i.price} Birr</p>
+                  <p className="Amount">Amount: {i.amount}</p>
                   <p className="description">{i.description}</p>
     
                 </div>
@@ -103,7 +103,7 @@ function Store() {
                 </div>
                 
               </div>
-            );
+            )
           })}
       </div>
     </div>
