@@ -1,22 +1,46 @@
 // eslint-disable-next-line no-unused-vars
 import React,{useState,useEffect} from 'react'
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import './EditPage.css'
 import inventory from '../../img/inventory.png'
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate  } from 'react-router-dom';
+import axios from 'axios';
 function EditPage() {
+  const [fetched,Setfetched] =useState({});
   const [name,Setname]=useState('');
   const [image,Setimage]=useState('');
   const [category,Setcategory]=useState('');
   const [description,Setdescription]=useState('');
   const [price,Setprice]=useState('');
   const [amount,Setamount]=useState('');
+  const[dimage,Setdimage]=useState('');
   const { Id } = useParams();
+  const navigate = useNavigate();
+  useEffect(() => {
+    fetch(`http://localhost:8000/products/get/${Id}`,{
+      method:'GET'
+    })
+    .then((response)=>response.json())
+    .then((result)=>{
+        Setfetched(result);
+        Setname(result.name);
+        Setcategory(result.category);
+        Setdescription(result.description);
+        Setprice(result.price);
+        Setamount(result.amount);
+        Setimage(result.image);
+        Setdimage(`http://localhost:8000/images/${result.image}`)
+    })
+  }, [Id]);
+  
 
   function Base64(e){
+    Setimage(e.target.files[0]);
     var reader=new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload=()=>{
-      Setimage(reader.result);
+      Setdimage(reader.result);
       // console.log(reader.result);
     };
     reader.onerror=(err)=>{
@@ -27,80 +51,81 @@ function EditPage() {
     async function editItem(e) {
         e.preventDefault();
         try {
-            alert('edited successfully')
-          const response = await fetch(`http://localhost:8000/products/edit/${Id}`, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              name,
-              image,
-              category,
-              description,
-              price,
-              amount,
-            }),
-          });
-    
-          if (response.ok) {
+           toast.success('product Added successfully',{
+              autoClose:2000,
+              onClose:setTimeout(() => {
+                navigate('/see-store');
+              }, 3000)
+            });
+            const formData = new FormData(); 
+            formData.append('name', name);
+            formData.append('category', category);
+            formData.append('description', description);
+            formData.append('price', price);
+            formData.append('amount', amount);
+            formData.append('image', image);
+            console.log(formData);
+
+          const response = await axios.put(`http://localhost:8000/products/edit/${Id}`, formData);
+          if (response.status === 200) {
             console.log('Item edited successfully');
-            // Handle success, e.g., redirect or show a success message
+            
           } else {
             console.error('Failed to edit item');
             // Handle failure, e.g., show an error message
           }
-        } catch (err) {
-          console.error('Error:', err);
-          // Handle other errors, e.g., network issues
+        } catch (error) {
+          console.error('Error editing item:', error.response);
         }
       }
     
-      useEffect(() => {
-       
-      }, [Id]);
-
-
   return (
-    <div className='edit-wrapper'>
-   <img className='background' src={inventory} alt="background" />
-   <form className='forms row'>
-      
-
-        <div className='col-lg-6'>
-        <h1 className='addNew'>Add New Product</h1>
-          <input accept='image/*' type="file"onChange={Base64}/>
-          <img className='choosen-image' src={image} alt="" />
+    <div className="main">
+      <img className='background' src={inventory} alt="background" />
+      <div className='edit-wrapper'>
+   <form encType='multipart/form-data' className='forms row'>
+        <div className="Choose-form" >
+        <h1 className='addNew'>Edit Product</h1>
+        <div className="Choose-file">
+           <input accept="image/*" name='image' type="file" onChange={(e)=>Base64(e)} />
+            <img className="choosen-image" src={dimage} alt="" />
+           </div>
         </div>
 
-
-        
-        <div className='col-lg-6'>
-        <label className='col-12'>Product name:</label>
-        <input className='col-9' type="text" onChange={(e)=>{Setname(e.target.value)}} placeholder='Add product name' />
+        <div className="inputs"  >
+        <label >Product name:</label>
+        <input  type="text" value={name} onChange={(e)=>{Setname(e.target.value)}} placeholder='Add product name' />
         </div>
-        <div className='col-lg-6'>
-        <label className='col-12'>Product category:</label>
-        <input className='col-9' type="text" onChange={(e)=>{Setcategory(e.target.value)}}  placeholder='Add product category'/>
-        </div>
+        <div  className="inputs">
+          <label>Product category:</label>
+          <select className="select" onChange={(e)=>{Setcategory(e.target.value)}} value={category}>
+          <option value=''>Select Category</option>
+          <option value='Mechanical Tools'>Mechanical Tools</option>
+          <option value='Electrical Tools'>Electrical Tools</option>
+          <option value='Eloctronics'>Eloctronics</option>
+          <option value='Clothes'>Clothes</option>
+      </select>
+           
+          </div>
        
-        <div className='col-lg-6'> 
-        <label className='col-12 '>Product Price:</label>
-        <input className='col-9' type="number" onChange={(e)=>{Setprice(e.target.value)}} placeholder='Add price of the product' />
+        <div className="inputs" > 
+        <label >Product Price:</label>
+        <input  type="number" value={price} onChange={(e)=>{Setprice(e.target.value)}} placeholder='Add price of the product' />
         </div>
-        <div className='col-lg-6'>
-        <label className='col-12'>Product Amount:</label>
-        <input className='col-9' type="number" onChange={(e)=>{Setamount(e.target.value)}} placeholder='Add amount of product'/>
+        <div className="inputs"  >
+        <label >Product Amount:</label>
+        <input  type="number" value={amount} onChange={(e)=>{Setamount(e.target.value)}} placeholder='Add amount of product'/>
         </div>
-        <div className='col-12 col-lg-6'> 
+        <div className="inputs" > 
           <label>Description:</label>
-          <textarea className='description col-12' name="description" onChange={(e)=>{Setdescription(e.target.value)}} cols="35" rows="10" placeholder='Description of product'></textarea>
+          <textarea className='description discr ' name="description" value={description} onChange={(e)=>{Setdescription(e.target.value)}} cols="35" rows="10" placeholder='Description of product'></textarea>
         </div>
         <div className='btn-container'>
           <button className='btn' onClick={editItem}>Submit</button>
         </div>
       </form>
 </div>
+    </div>
   )
 }
 

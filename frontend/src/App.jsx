@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react'
 import './App.css'
+import { ToastContainer } from 'react-toastify';
 import {Route, Routes} from 'react-router-dom'
 import TopNav from './components/TopNav/TopNav'
 import SideNav from './components/SideNav/SideNav'
@@ -28,7 +29,7 @@ function App() {
 
          </Routes>
          </div>
-         
+         <ToastContainer />
          
      
       </>

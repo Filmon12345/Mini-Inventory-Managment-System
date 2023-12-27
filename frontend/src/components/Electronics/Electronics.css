@@ -1,0 +1,94 @@
+h1{
+   text-align: center;
+    color:green;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+   
+}
+.Catagory{
+    margin-left: 100px;
+    display: grid;
+    grid-template-columns: 500px 500px ;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+@media(max-width:1190px){
+    
+  .card {
+    display: grid;
+    grid-template-rows: 100px 1fr 70px;
+    padding-top: 30px;
+    margin-top: 10px;
+  
+  } 
+  
+    .Catagory{
+      grid-template-columns:300px 300px 300px;
+    }
+    .product-detail {
+    font-size: 14px;
+    
+    }
+    .product-detail h3{
+     font-size: 15px;
+    }
+    .product-detail h4 {
+     font-size: 14px;
+     
+    }
+   
+  }
+  @media(max-width:1110px){
+   
+   
+  .card {
+    display: grid;
+    grid-template-rows: 100px 1fr 50px;
+    padding-top: 30px;
+    margin-top: 10px;
+  
+  } 
+    .Catagory{
+      grid-template-columns:400px 400px;
+    
+    }
+    .product-detail {
+    font-size: 14px;
+    
+    }
+    .product-detail h3{
+     font-size: 15px;
+    }
+    .product-detail h4 {
+     font-size: 14px;
+     
+    }
+   }
+  @media(max-width:955px){
+   
+    .Catagory{
+      grid-template-columns: 600px;
+      
+    }
+  
+  .product-detail {
+  font-size: 14px;
+  
+  }
+  .product-detail h3{
+   font-size: 15px;
+  }
+  .product-detail h4 {
+   font-size: 14px;
+   
+  }
+ 
+  }
+  @media(max-width:700px){
+   
+    .Catagory{
+      grid-template-columns: 300px;
+      margin-left: 100px;
+    }
+  }

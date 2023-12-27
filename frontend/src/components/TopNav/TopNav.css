@@ -1,10 +1,10 @@
 .top-nav {
-  background: white;
+  background:white;
   height: 105.5px;
   text-align: center;
   position: fixed;
   top:0;
-  left:101px;
+  left:0;
   right:0;
 z-index: 10;
   box-shadow: 1px 3px 7px rgba(0, 0, 0, 0.8);

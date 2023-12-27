@@ -43,21 +43,35 @@ function Add() {
   }
 
   return (
-    <>
+    <div className="main">
+     <img className="background" src={inventory} alt="background" />
       <div className="add-wrapper">
-        <img className="background" src={inventory} alt="background" />
+       
 
         <form className="forms row">
-          <div className="col-lg-6">
-            <h1 className="addNew">Add New Product</h1>
-            <input accept="image/*" type="file" onChange={Base64} />
+        <h1 className="addNew">Add New Product</h1>
+          <div className="Choose-form">
+           
+           <input accept="image/*" type="file" onChange={Base64} />
             <img className="choosen-image" src={image} alt="" />
+           
           </div>
-
-          <div className="col-lg-6">
-            <label className="col-12">Product name:</label>
+<div className="input-form">
+          <div  className="inputs">
+            <label>Product category:</label>
+            <select className="select" onChange={(e)=>{Setcategory(e.target.value)}} value={category}>
+        <option value=''>Select Category</option>
+        <option value='Mechanical Tools'>Mechanical Tools</option>
+        <option value='Electrical Tools'>Electrical Tools</option>
+        <option value='Eloctronics'>Eloctronics</option>
+        <option value='Clothes'>Clothes</option>
+      </select>
+           
+          </div>
+  
+<div className="inputs" >
+            <label>Product name:</label>
             <input
-              className="col-9"
               type="text"
               onChange={(e) => {
                 Setname(e.target.value);
@@ -65,22 +79,10 @@ function Add() {
               placeholder="Add product name"
             />
           </div>
-          <div className="col-lg-6">
-            <label className="col-12">Product category:</label>
-            <input
-              className="col-9"
-              type="text"
-              onChange={(e) => {
-                Setcategory(e.target.value);
-              }}
-              placeholder="Add product category"
-            />
-          </div>
 
-          <div className="col-lg-6">
-            <label className="col-12 ">Product Price:</label>
+          <div  className="inputs">
+            <label>Product Price:</label>
             <input
-              className="col-9"
               type="number"
               onChange={(e) => {
                 Setprice(e.target.value);
@@ -88,10 +90,9 @@ function Add() {
               placeholder="Add price of the product"
             />
           </div>
-          <div className="col-lg-6">
-            <label className="col-12">Product Amount:</label>
+          <div  className="inputs">
+            <label>Product Amount:</label>
             <input
-              className="col-9"
               type="number"
               onChange={(e) => {
                 Setamount(e.target.value);
@@ -99,19 +100,17 @@ function Add() {
               placeholder="Add amount of product"
             />
           </div>
-          <div className="col-12 col-lg-6">
+          <div  className="inputs">
             <label>Description:</label>
-            <textarea
-              className="description col-12"
+            <textarea className="discr"
               name="description"
               onChange={(e) => {
                 Setdescription(e.target.value);
               }}
-              cols="35"
-              rows="10"
               placeholder="Description of product"
             ></textarea>
-          </div>
+          </div >
+</div>
           <div className="btn-container">
             <button className="btn" onClick={submit}>
               Submit
@@ -119,7 +118,7 @@ function Add() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

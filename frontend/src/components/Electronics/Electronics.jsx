@@ -1,10 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react'
 import './Electronics.css'
-// import del from '../../img/delete.png'
+
 import edit from '../../img/edit.png'
 import sell from '../../img/sell.png'
-// import {} from 'react-router-dom'
+
 import { useParams,Link } from 'react-router-dom';
 function Electronics() {
   const {productType} =useParams();
@@ -20,25 +20,29 @@ function Electronics() {
     },[]);
 
   return (
-    <div>
-      <h1>{productType}</h1>
+    <>
+    <h1>{productType}</h1>
+    <div className='Catagory'>
+      
       {
         data.map((i,index)=>{
-          const cardstatus =i.amount>40?' sufficient':'insufficient';
+          const cardstatus = i.amount > 40 ? " SUFFICIENT" : "INSUFFICIENT";
+
           return(
-            <div key={index} className='card col-7 col-md-4 col-lg-3'>
+            <div key={index} className='card'>
             <div className={`status ${cardstatus}`}>{cardstatus}</div>
-          <div className='imgs'><div className='img'><img className='cards-img' src={i.image} alt="" /></div></div>
+          <div className='imgs'> 
+          <img className='cards-img' src={i.image} alt="" />
+          </div>
           <div className='product-detail'>
-            <h4>{i.name}</h4>
-            <p>{i.description}</p>
-            <p>category: {i.category}</p>
-            <p>Price: {i.price}</p>
-            <p>Amount: {i.amount}</p>
+            <h3>{i.name}</h3>
+            <h4>Category: {i.category}</h4>
+            <p className="price">Price: {i.price} Birr</p>
+            <p className="Amount">Amount: {i.amount}</p>
+            <p className="description">{i.description}</p>
           </div>
           <div className="card-actions">
             
-            {/* <img src={del} onClick={() => deleteItem(i._id)} alt="Delete" /> */}
             <Link to={`/sell-product/${i._id}/${i.name}/${i.price}/${i.amount}`}>
               <img src={sell} alt="Sell" />
             </Link>
@@ -52,6 +56,7 @@ function Electronics() {
         })
       }
     </div>
+    </>
   )
 }
 

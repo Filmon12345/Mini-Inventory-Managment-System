@@ -1,23 +1,142 @@
+.dashboard-container{
+  margin-left: 100px;
+}
+.total{
+  margin-left: 100px;
+  display:flex;
+  justify-content: space-around;
+  flex: 1;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.totalAmount{
+  border:1px solid green;
+  border-radius: 7px;
+  font-size: 20px;
+  width: 450px;
+  text-align: center;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
-
+.totalAmount p:first-child{
+  
+  font-size: 30px;
+  color: green;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.catagory{
+text-decoration: none;
+}
 
 .title{
-    z-index: 5;
-    font-family:fantasy;
-    font-size: 40px; 
-    top: 50%;
-    position: absolute;
-    color:black;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color:#eee;
+  min-width:max-content;
+   text-align: center;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 40px; 
+  color:black;
+  background-color:rgb(215, 228, 215);
   border-radius: 10px;
-  padding: 10px 10px;
+  padding: 50px;
+ margin: 0;
+}
+
+.search-product{
+  width: 400px;
+  padding: 3px 10px;
+  border-radius: 6px;
+  margin-bottom:40px;
+border: 1px solid #aeabae;
+outline:none;
+margin-left: 100px;
+}
+.search-product::placeholder{
+  font-size:smaller;
+  opacity: 0.5;
  
+}
+.search-product:hover{
+ background-color: #eee;
 }
 
 
+.category-list{
+  display:grid;
+  grid-template-columns: 1fr 1fr  ;
+  column-gap: 10px;
+  row-gap: 20px;
+}
 
     
 
+@media (max-width: 1190px) {
+  .title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 40px; 
+    padding: 30px;
+  
+  }
+  
+  
+  .category-list{
+    grid-template-columns: 1fr 1fr ;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 1110px) {
+  .title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px; 
+    padding: 30px;
+  
+  }
+  
+  .search-product{
+    width: 400px;
+  }
+  .category-list{
+    grid-template-columns: 1fr 1fr ;
+    row-gap: 20px;
+  }
+}
+@media (max-width: 955px) {
+  
+  
+  .title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 30px; 
+    padding: 30px;
+  
+  }
+  
+  .search-product{
+    width: 400px;
+  }
+  .category-list{
+    grid-template-columns: 1fr 1fr ;
+    row-gap: 20px;
+  }
+ 
+}
+@media (max-width: 700px) {
+  .dashboard-container{
+    margin-left: 90px;
+  }
+ 
+  
+  .title{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px; 
+  
+    padding: 40px;
+  
+  }
+  
+  .search-product{
+    width: 230px;
+  }
+  .category-list{
+    grid-template-columns: 1fr ;
+    row-gap: 10px;
+  }
+}
 
