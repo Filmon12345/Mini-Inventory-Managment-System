@@ -31,7 +31,7 @@ label {
 .forms {
   gap: 8px;
   background-color: white;
-  width: 700px;
+  width: 500px;
 }
 
 .forms ::placeholder {

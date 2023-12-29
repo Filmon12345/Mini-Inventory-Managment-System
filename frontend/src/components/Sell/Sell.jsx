@@ -46,7 +46,7 @@ function Sell() {
 
   return (
     <div className="sell-wrapper">
-      <form>
+      <form className="sell-form">
         <div className="title">
         <p>{amount} {name}s in Stock</p>
         </div>
