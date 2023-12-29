@@ -13,23 +13,26 @@ z-index: 10;
   height: 100px;
   margin: 4px 7px;
   padding: 5px 60px;
-
-  
+ 
+}
+.mini-logo{
+  display: none;
 }
 @media(max-width:800px){
   .logo {
+  display: none; 
+  }
+
+  .mini-logo{
+    display: inline-block;
   
     height: 90px;
-    margin: 1px 6px;
-    padding: 5px 50px;
- 
-    
+    background:transparent;
   }
   .top-nav {
-    background:white;
-    text-align: right;
-    position: fixed;
-  
+
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
   }
   
 }
