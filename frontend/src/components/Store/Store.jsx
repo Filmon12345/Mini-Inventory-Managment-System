@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import "../../bootstrap.css";
 import "./Store.css";
-import del from "../../img/delete.png";
-import edit from "../../img/edit.png";
-import sell from "../../img/sell.png";
+import del from "../../img/delete1.ico";
+import edit from "../../img/edit.ico";
+import sell from "../../img/sell.ico";
 import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 // import axios from 'axios';
@@ -122,15 +122,16 @@ function showcardfun(){
                     src={del}
                     onClick={() => deleteItem(i._id)}
                     alt="Delete"
+                    className="icons"
                   />
                   <Link
                     to={`/sell-product/${i._id}/${i.name}/${i.price}/${i.amount}`}
                   >
-                    <img src={sell} alt="Sell" />
+                    <img src={sell} alt="Sell" className="icons"/>
                   </Link>
 
                   <Link to={`/edit-product/${i._id}`}>
-                    <img src={edit} alt="Edit" />
+                    <img src={edit} alt="Edit" className="icons" />
                   </Link>
                 </div>
                 

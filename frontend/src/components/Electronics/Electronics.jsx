@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react'
 import './Electronics.css'
 
-import edit from '../../img/edit.png'
-import sell from '../../img/sell.png'
+import edit from '../../img/edit.ico'
+import sell from '../../img/sell.ico'
 import { useParams,Link } from 'react-router-dom';
 
 function Electronics() {
@@ -44,11 +44,11 @@ function Electronics() {
           <div className="card-actions">
             
             <Link to={`/sell-product/${i._id}/${i.name}/${i.price}/${i.amount}`}>
-              <img src={sell} alt="Sell" />
+              <img src={sell} alt="Sell" className='icons'/>
             </Link>
 
             <Link to={`/edit-product/${i._id}`}>
-              <img src={edit} alt="Edit" />
+              <img src={edit} alt="Edit" className='icons' />
             </Link>
           </div>
         </div>
