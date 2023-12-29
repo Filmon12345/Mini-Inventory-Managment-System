@@ -1,3 +1,4 @@
+![d](https://github.com/Filmon12345/Mini-Inventory-Managment-Syatem/assets/105017499/cb682c2f-64ea-4b4c-acad-534783bcaee1)
 ![Screenshot (29)](https://github.com/Filmon12345/inventory-demo/assets/105017499/058411e7-7668-41a5-88cd-c78efe04988d)
 ![Screenshot (28)](https://github.com/Filmon12345/inventory-demo/assets/105017499/403b29fd-c3ea-463d-a9cc-aa472a8e285a)
 ![Screenshot (27)](https://github.com/Filmon12345/inventory-demo/assets/105017499/e2ec1076-60b5-4f76-ac7b-e3b4b627e886)
