@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState } from "react";
+import React, { useState, useNavigate} from "react";
 import "./Sell.css";
-import { useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 
 function Sell() {
   const { Id, name, price, amount } = useParams();
@@ -13,7 +13,9 @@ function Sell() {
   async function sendSell(e) {
     e.preventDefault();
     try {
-      alert("sold successfully");
+      alert("Sold Successfully");
+    
+     
       const response = await fetch(
         `http://localhost:8000/Products/sell/${Id}`,
         {
@@ -25,14 +27,15 @@ function Sell() {
             sold,
           }),
         }
-      );
+      );  
+     
 
       if (response.ok) {
-        console.log("Item edited successfully");
+        console.log("Item Edited Successfully");
 
         // Handle success, e.g., display a success message
       } else {
-        console.error("Failed to edit item");
+        console.error("Failed to Edit item");
         // Handle failure, e.g., display an error message
       }
     } catch (err) {
@@ -44,28 +47,23 @@ function Sell() {
   return (
     <div className="sell-wrapper">
       <form>
-        <h1>{name}</h1>
-        <p>
-          you have{" "}
-          <span className="green">
-            {amount} {name}
-          </span>{" "}
-          in stock
-        </p>
-        <label htmlFor="sellAmount">How much do you want to sell?</label>
-        <br />
-        <p className="price">the price is :{price} X </p>
-        <input
-          className="amount"
-          type="number"
-          id="sellAmount"
-          onChange={(e) => setSold(e.target.value)}
-          placeholder="amount..."
-        />
-        <div className="total">
-          <p>Total:{total}</p>
+        <div className="title">
+        <p>{amount} {name}s in Stock</p>
         </div>
+
+      <div className="sells title">
+        <p className="price">Price of 1 Hp = {price} * </p>
+          <input
+            className="amount"
+            type="number"
+            id="sellAmount"
+            onChange={(e) => setSold(e.target.value)}
+            placeholder="Amount..."
+          />
+           <p>Total:{total}</p>
         <button onClick={sendSell}>Sell</button>
+      </div>
+     
       </form>
     </div>
   );

@@ -1,45 +1,65 @@
-.price{
-    float: left;
-    
-}
-.amount,button{
-    margin-left: 5px;
-
-}
-.amount{
-    width: 80px;
-    margin-right: 25px;
-    border: none;
-    padding: 2px;
-    border-radius: 5px;
-}
 .sell-wrapper{
-    display: flex;
-    justify-content: center;
-
+    margin: 10px 0px 0px 100px ;
 }
+
 form{
-    background-color: rgb(233, 233, 233);
-    padding: 15px 100px;
-    margin: 10px;
-    float: left;
-    border-radius: 15px;
-    width: auto;
-    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    gap: 15px;
 }
-h1{
-    color:rgb(22, 218, 22);
+.title{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    font-family:'Courier New', Courier, monospace
+}
+.sells{
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
-button{
-    align-self: center;
-    padding: 6px 15px;
-    border-radius: 10px;
+.sells input{
+    width: 350px;
+    padding: 6px;
+    font-size: medium;
+    padding-left: 4px;
     border: none;
-    background-color: lawngreen;
+    border-radius: 3px;
+    outline: none;
 }
-.green{
-    font-weight: bolder;
-    color:red;
-    font-size: larger;
+.sells button{
+
+width: 100px;
+padding: 0 7px 0px  7px;
+border: none;
+border-radius: 5px;
+background-color: rgb(9, 122, 137);
+color:#eee;
+font-size: 25px;
+
+}
+.sells button:hover{
+background-color: rgb(16, 74, 81);
+}
+.sells p{
+    font-size: 22px;
+}
+
+@media(max-width:589px){
+    .sell-wrapper{
+     margin-left: 60px;
+
+    }
+.title{
+    margin-left: 9px;
+    padding: 10px 0px 7px 10px;
+}
+.sells input{
+    width: 300px;
+   
+}   
 }
