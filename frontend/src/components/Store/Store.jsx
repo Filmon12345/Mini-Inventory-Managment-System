@@ -13,6 +13,8 @@ function Store() {
   const [showtable, Setshowtable] = useState('d-none');
   const [showcard,Setshowcard] = useState('');
   const [data,Setdata] = useState([]);
+ const [isActivet ,setIsActivet] = useState(false);
+ const [isActivec ,setIsActivec] = useState(true)
   useEffect(() => {
     fetch("http://localhost:8000/products/get", {
       method: "GET",
@@ -35,7 +37,7 @@ function Store() {
         method: 'DELETE',
       });
       if (response.ok) {
-        toast.success('Item deleted successfully');
+        toast.success('Product deleted Successfully');
         fetch('http://localhost:8000/products/get', {
           method: 'GET',
         })
@@ -56,10 +58,13 @@ function Store() {
 function showtablefun(){
   Setshowtable('d-block')
   Setshowcard('d-none')
+ 
 }
+
 function showcardfun(){
   Setshowtable('d-none')
   Setshowcard('d-grid')
+
 }
   return (
     <div className="card-wrapper">
@@ -71,15 +76,21 @@ function showcardfun(){
         }}
         placeholder="Search for Product"
       />
-    <div className='btn btn-secondary'
+    <div className=' btn-secondary'
     style={{
       fontSize:"larger",
       marginLeft:100,
       marginBottom:10
     }}
     >
-      <button className="btn btn-secondary " onClick={showcardfun} >Product Card</button>
-      <button className="btn btn-secondary " onClick={showtablefun}>Products Table</button>
+      <button className={`btn btn-success ${isActivec?'active':''}`} onClick={ ()=>{
+        setIsActivec(true)
+        setIsActivet(false)
+        showcardfun()}} >Product Card</button>
+      <button className={`btn btn-success ${isActivet?'active':''}`} onClick={()=>{
+        setIsActivet(true)
+        setIsActivec(false)
+        showtablefun()}}>Products Table</button>
     </div>
       <div className={`${showcard} card-container row`}>
         {data
@@ -89,21 +100,21 @@ function showcardfun(){
               : items.name.toLowerCase().includes(search)
           )
           .map((i, index) => {
-            const cardstatus = i.amount > 40 ? " SUFFICIENT" : "INSUFFICIENT";
+            const cardstatus = i.amount > 40 ? "SUFFICIENT" : "INSUFFICIENT";
             const status = i.amount > 40 ? "SUFFICIENT" : "INSUFFICIENT";
             return (
               <div key={index} className="card">
               
                 <div className={`status ${cardstatus}`}>{status}</div>
                 <div className="imgs">
-                   <img className='cards-img' src={i.image} alt="" />
+                   <img className='cards-img' src={`http://localhost:8000/images/${i.image}`} alt="" />
                 </div>
                 <div className="product-detail">
                   <h3>{i.name}</h3>
-                  <h4>Category: {i.category}</h4>
-                  <p className="price">Price: {i.price} Birr</p>
-                  <p className="Amount">Amount: {i.amount}</p>
-                  <p className="description">{i.description}</p>
+                  <h6>Category: {i.category}</h6>
+                  <h6 className="price">Price: {i.price} Birr</h6>
+                  <h6 className="Amount">Amount: {i.amount}</h6>
+                  <p className="description"><span>Description:</span> {i.description}</p>
     
                 </div>
                 <div className="card-actions">
@@ -129,10 +140,10 @@ function showcardfun(){
       </div>
 
       <div className={`${showtable}`} style={{
-      marginLeft:100
+      marginLeft:90
     }}>
       <table className='summary-table'>
-     
+     <thead>
           <tr>
           <th>Product Name</th>
           <th>Category</th>
@@ -140,7 +151,7 @@ function showcardfun(){
           <th>Price</th>
           <th>Status</th>
           </tr>
-        
+          </thead>
          { data.map((i,index)=>{
           const cardstatus =i.amount>40?' Sufficient':'Insuficient';
          return(

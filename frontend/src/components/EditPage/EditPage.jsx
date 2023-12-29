@@ -17,6 +17,7 @@ function EditPage() {
   const[dimage,Setdimage]=useState('');
   const { Id } = useParams();
   const navigate = useNavigate();
+  
   useEffect(() => {
     fetch(`http://localhost:8000/products/get/${Id}`,{
       method:'GET'
@@ -33,7 +34,6 @@ function EditPage() {
         Setdimage(`http://localhost:8000/images/${result.image}`)
     })
   }, [Id]);
-  
 
   function Base64(e){
     Setimage(e.target.files[0]);
@@ -41,7 +41,7 @@ function EditPage() {
     reader.readAsDataURL(e.target.files[0]);
     reader.onload=()=>{
       Setdimage(reader.result);
-      // console.log(reader.result);
+     
     };
     reader.onerror=(err)=>{
       console.log('error', err);
@@ -51,11 +51,11 @@ function EditPage() {
     async function editItem(e) {
         e.preventDefault();
         try {
-           toast.success('product Added successfully',{
+           toast.success('Edited Successfully',{
               autoClose:2000,
               onClose:setTimeout(() => {
                 navigate('/see-store');
-              }, 3000)
+              }, 1000)
             });
             const formData = new FormData(); 
             formData.append('name', name);
@@ -68,14 +68,14 @@ function EditPage() {
 
           const response = await axios.put(`http://localhost:8000/products/edit/${Id}`, formData);
           if (response.status === 200) {
-            console.log('Item edited successfully');
+            console.log('Product edited successfully');
             
           } else {
-            console.error('Failed to edit item');
+            console.error('Failed to edit Product');
             // Handle failure, e.g., show an error message
           }
         } catch (error) {
-          console.error('Error editing item:', error.response);
+          console.error('Error editing Product:', error.response);
         }
       }
     
@@ -84,11 +84,11 @@ function EditPage() {
       <img className='background' src={inventory} alt="background" />
       <div className='edit-wrapper'>
    <form encType='multipart/form-data' className='forms row'>
-        <div className="Choose-form" >
         <h1 className='addNew'>Edit Product</h1>
+        <div className="Choose-form" >
         <div className="Choose-file">
            <input accept="image/*" name='image' type="file" onChange={(e)=>Base64(e)} />
-            <img className="choosen-image" src={dimage} alt="" />
+            <img className="choosen-image" value={image} src={dimage} alt="" />
            </div>
         </div>
 
@@ -98,12 +98,12 @@ function EditPage() {
         </div>
         <div  className="inputs">
           <label>Product category:</label>
-          <select className="select" onChange={(e)=>{Setcategory(e.target.value)}} value={category}>
-          <option value=''>Select Category</option>
-          <option value='Mechanical Tools'>Mechanical Tools</option>
-          <option value='Electrical Tools'>Electrical Tools</option>
-          <option value='Eloctronics'>Eloctronics</option>
-          <option value='Clothes'>Clothes</option>
+        <select className="select"  onChange={(e)=>{Setcategory(e.target.value)}} value={category} >
+          <option value="">Select Category</option>
+          <option value="Mechanical Tools">Mechanical Tools</option>
+          <option value="Electrical Tools">Electrical Tools</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothes">Clothes</option>
       </select>
            
           </div>
@@ -118,7 +118,7 @@ function EditPage() {
         </div>
         <div className="inputs" > 
           <label>Description:</label>
-          <textarea className='description discr ' name="description" value={description} onChange={(e)=>{Setdescription(e.target.value)}} cols="35" rows="10" placeholder='Description of product'></textarea>
+          <textarea className='description discr ' name="description" value={description} onChange={(e)=>{Setdescription(e.target.value)}} placeholder='Description of product'></textarea>
         </div>
         <div className='btn-container'>
           <button className='btn' onClick={editItem}>Submit</button>

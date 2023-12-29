@@ -11,11 +11,11 @@ body {
   flex-direction: column;
   position: fixed;
   z-index: 50;
- top: 109px;
+ top: 110px;
   bottom: 0;
   left: 0;
   gap: 40px;
-  box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.6);
+  box-shadow: 1px 4px 7px rgba(0, 0, 0, 0.6);
 }
 .side-title {
  min-width:100px ;
@@ -27,6 +27,7 @@ body {
   color: rgb(22, 165, 22);
 font-size: smaller;
 font-weight: bold;
+margin-top: 9px;
 }
 
 
@@ -68,6 +69,20 @@ border: 1px solid rgb(93, 93, 93);
   }
 }
 @media(max-width:800px){
+  .menu {
+    min-width: 101px;
+    max-width: 101px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 50;
+   top: 93px;
+    bottom: 0;
+    left: 0;
+    gap: 40px;
+    box-shadow: 1px 5px 7px rgba(0, 0, 0, 0.3);
+  }
   .menu img {
     height: 28px;
   }

@@ -4,8 +4,8 @@ import './Electronics.css'
 
 import edit from '../../img/edit.png'
 import sell from '../../img/sell.png'
-
 import { useParams,Link } from 'react-router-dom';
+
 function Electronics() {
   const {productType} =useParams();
     const [data,Setdata]=useState([]);
@@ -32,14 +32,14 @@ function Electronics() {
             <div key={index} className='card'>
             <div className={`status ${cardstatus}`}>{cardstatus}</div>
           <div className='imgs'> 
-          <img className='cards-img' src={i.image} alt="" />
+          <img className='cards-img' src={`http://localhost:8000/images/${i.image}`} alt="" />
           </div>
           <div className='product-detail'>
             <h3>{i.name}</h3>
-            <h4>Category: {i.category}</h4>
-            <p className="price">Price: {i.price} Birr</p>
-            <p className="Amount">Amount: {i.amount}</p>
-            <p className="description">{i.description}</p>
+            <h6>Category: {i.category}</h6>
+            <h6 className="price">Price: {i.price} Birr</h6>
+            <h6 className="Amount">Amount: {i.amount}</h6>
+            <p className="description"><span>Description: </span>{i.description}</p>
           </div>
           <div className="card-actions">
             

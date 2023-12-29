@@ -53,6 +53,9 @@ label {
   align-items: baseline;
   column-gap: 10px;
 }
+.inputs .discr{
+  height: 140px;
+}
 
 .forms label {
  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

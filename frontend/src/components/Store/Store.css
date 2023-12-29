@@ -28,6 +28,7 @@ outline:none;
   column-gap: 30px;
   row-gap: 30px;
   margin-left: 100px;
+  
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -49,32 +50,32 @@ outline:none;
   .product-detail {
     display: flex;
     flex-direction: column;
-   
-    
     border-radius: 10px;
     margin: 10px 4px;
     background-color: #eeeeee65;
     padding: 5px 15px;
     
   }
-  .product-detail h3{
+  .product-detail h3,span {
     font-family: fantasy;
     color:rgb(9, 95, 106);
+    
   }
   .product-detail h4 {
     font-family: fantasy;
-   
+   font-size: 20px;
   }
-  .product-detail p{
-   color:green;
-   font-family:'Times New Roman', Times, serif ;
+  .product-detail h6{
+ 
+ font-weight: 700;
+ font-size: small;
   }
   .product-detail .description{
     overflow: scroll;
    }
 .card {
     display: grid;
-    grid-template-rows: 190px 300px 70px;
+    grid-template-rows: 190px 250px 70px;
     padding-top: 20px;
     margin-top: 10px;
     
@@ -91,7 +92,7 @@ outline:none;
   max-height: 205px;
   object-fit: contain;
   background-color: transparent;
-
+margin-top: 9px;
 } 
 
 @media(max-width:1190px){
@@ -129,36 +130,7 @@ outline:none;
   }
  
 }
-@media(max-width:1110px){
-  .searchBar{
-    width:200px ;
-  }
-  .cards-img {
-    height: 180px;
-  max-width: 300px;
-  max-height: 100px;
-  object-fit: contain;
-  background-color: transparent;
-} 
 
-  .card-container{
-    grid-template-columns:400px 400px;
-  
-  }
-  .product-detail {
-  font-size: 14px;
-  
-  }
-  .product-detail h3{
-   font-size: 15px;
-  }
-  .product-detail h4 {
-   font-size: 14px;
-   
-  }
-  .card-actions img {
-    height: 30px; 
-}}
 @media(max-width:955px){
   .searchBar{
     width:60px ;
@@ -181,6 +153,7 @@ font-size: 14px;
 }
 .card-actions img {
   height: 30px; 
+ 
 }
 }
 @media(max-width:560px){
@@ -202,26 +175,24 @@ font-size: 14px;
 
 .Sufficient {
  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-  
   color: green;
-  margin:100px;
+ width:10px
 }
 .Insuficient {
 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- 
   color: red;
-  opacity: 0.8;
 
- 
+  width: 10px;
 }
 .SUFFICIENT {
   position: fixed;
   z-index: 1;
   background-color: rgb(1, 113, 1);
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
   font-size: 11px;
-  width: 80px;
+ 
+  
 }
 .INSUFFICIENT {
   position: fixed;
@@ -229,29 +200,28 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
   background-color: red;
   color: black;
   opacity: 0.8;
-  font-size: 11px;
-  min-width: 60px;
  
 }
 .status {
-  width: auto !important;
+  width: 90px !important;
   font-size: smaller;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  padding: 3px 8px;
+  padding: 1px 3px;
   position: absolute;
   border-bottom-right-radius: 10px;
 }
 table {
-  border-collapse: collapse;
   width: 100%;
-  margin:20px;
 }
 
 th, td {
   text-align: left;
   padding: 8px;
- 
+
 }
+
+
+
 
 tbody:nth-child(even){background-color: #f2f2f2}
 
