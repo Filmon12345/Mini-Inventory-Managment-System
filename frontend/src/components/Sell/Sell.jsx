@@ -1,11 +1,13 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState, useNavigate} from "react";
+import React, { useState} from "react";
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 import "./Sell.css";
-import { useParams} from "react-router-dom";
+import { useParams ,useNavigate} from "react-router-dom";
 
 function Sell() {
   const { Id, name, price, amount } = useParams();
-
+const navigate = useNavigate();
   console.log(price);
 
   const [sold, setSold] = useState("");
@@ -13,7 +15,13 @@ function Sell() {
   async function sendSell(e) {
     e.preventDefault();
     try {
-      alert("Sold Successfully");
+
+      toast.success('Product Sold Successfully',{autoClose:1000})
+      setTimeout(()=>{
+        navigate('/see-store');
+      },1000)
+        
+      
     
      
       const response = await fetch(

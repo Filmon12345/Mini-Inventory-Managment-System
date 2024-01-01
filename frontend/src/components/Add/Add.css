@@ -110,13 +110,17 @@ padding: 8px;
     .forms {
       
       background-color: white;
-      width: 600px;
+      width: 400px;
     }
  
 }
 @media (max-width: 560px) {
  
- 
+  .forms {
+      
+    background-color: white;
+    width: 400px;
+  }
   
   
   

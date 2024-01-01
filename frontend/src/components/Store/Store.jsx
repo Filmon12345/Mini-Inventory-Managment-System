@@ -74,7 +74,7 @@ function showcardfun(){
         onChange={(e) => {
           Setsearch(e.target.value);
         }}
-        placeholder="Search for Product"
+        placeholder="Search....."
       />
     <div className=' btn-secondary'
     style={{
