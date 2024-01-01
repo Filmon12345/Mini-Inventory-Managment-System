@@ -126,7 +126,7 @@ function Add() {
             </div>
           </div>
           <div className="btn-container">
-            <button className="btn" onClick={submit}>
+            <button className="btn btn-primary" onClick={submit}>
               Submit
             </button>
           </div>

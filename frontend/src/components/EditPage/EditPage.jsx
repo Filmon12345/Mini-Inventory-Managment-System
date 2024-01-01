@@ -45,6 +45,7 @@ function EditPage() {
     };
     reader.onerror=(err)=>{
       console.log('error', err);
+      console.log(fetched)
     };
     }
     
@@ -121,7 +122,7 @@ function EditPage() {
           <textarea className='description discr ' name="description" value={description} onChange={(e)=>{Setdescription(e.target.value)}} placeholder='Description of product'></textarea>
         </div>
         <div className='btn-container'>
-          <button className='btn' onClick={editItem}>Submit</button>
+          <button className='btn btn-primary' onClick={editItem}>Submit</button>
         </div>
       </form>
 </div>
