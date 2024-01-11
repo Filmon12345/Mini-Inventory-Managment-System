@@ -35,7 +35,7 @@ function Add() {
     e.preventDefault();
     try {
       toast.success('Product Added Successfully',{
-        autoClose:2000,
+        autoClose:1000,
         onClose:setTimeout(() => {
           navigate('/see-store');
         }, 1000)
@@ -58,10 +58,10 @@ function Add() {
     <div className="main">
       <img className="background" src={inventory} alt="background" />
       <div className="add-wrapper">
-        <form className="forms row">
+        <form className="forms row" >
           <h1 className="addNew">Add New Product</h1>
           <div className="Choose-form">
-            <input accept="image/*" type="file" onChange={(e)=>{Base64(e)}} />
+            <input accept="image/*" type="file" onChange={(e)=>{Base64(e)}}  required/>
             <img className="choosen-image" src={dimage} alt="" />
           </div>
           <div className="input-form">
@@ -73,6 +73,7 @@ function Add() {
                   Setcategory(e.target.value);
                 }}
                 value={category}
+                required
               >
                 <option value="">Select Category</option>
                 <option value="Mechanical Tools">Mechanical Tools</option>
@@ -90,6 +91,7 @@ function Add() {
                   Setname(e.target.value);
                 }}
                 placeholder="Add product name"
+                required
               />
             </div>
 
@@ -101,6 +103,7 @@ function Add() {
                   Setprice(e.target.value);
                 }}
                 placeholder="Add price of the product"
+                required
               />
             </div>
             <div className="inputs">
@@ -126,7 +129,8 @@ function Add() {
             </div>
           </div>
           <div className="btn-container">
-            <button className="btn btn-primary" onClick={submit}>
+            <button className="btn btn-primary" onClick={submit
+              }>
               Submit
             </button>
           </div>

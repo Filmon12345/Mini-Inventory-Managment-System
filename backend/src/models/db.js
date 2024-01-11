@@ -4,27 +4,27 @@ mongoose.connect(process.env.URI);
 const productSchema = new mongoose.Schema({
   name:{
     type:String,
-    required:false
+    required:true
   },
   image:{
     type:String,
-    required:false
+    required:true
   },
   category:{
     type:String,
-    required:false
+    required:true
   },
   description:{
     type:String,
-    required:false
+    required:true
   },
   price:{
     type:String,
-    required:false
+    required:true
   },
   amount:{
     type:String,
-    required:false
+    required:true
   }
 });
 

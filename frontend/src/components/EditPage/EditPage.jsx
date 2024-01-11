@@ -84,7 +84,7 @@ function EditPage() {
     <div className="main">
       <img className='background' src={inventory} alt="background" />
       <div className='edit-wrapper'>
-   <form encType='multipart/form-data' className='forms row'>
+   <form encType='multipart/form-data' className='forms row' required>
         <h1 className='addNew'>Edit Product</h1>
         <div className="Choose-form" >
         <div className="Choose-file">
