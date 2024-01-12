@@ -134,9 +134,7 @@ function showcardfun(){
           })}
       </div>
 
-      <div className={`${showtable}`} style={{
-      marginLeft:90
-    }}>
+      <div className={` tableContainer ${showtable}`}>
       <table className='summary-table'>
      <thead>
           <tr>
