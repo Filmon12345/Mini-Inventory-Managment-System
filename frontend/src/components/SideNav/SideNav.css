@@ -28,16 +28,22 @@ body {
 font-size: smaller;
 font-weight: bold;
 margin-top: 9px;
+
 }
+.side-title a{
+ 
+  padding: 5px;
 
-
-.menu img:hover{
+   
+ }
+.side-title a:hover{
  background-color: #eee;
-padding: 7px;
-border: 1px solid rgb(93, 93, 93);
- border-radius: 50%;
-  transition: 0.4s ease-in-out;
+ padding: 5px;
+border-radius: 50%;
+  
 }
+
+
 
 .menu img {
   height: 35px;
