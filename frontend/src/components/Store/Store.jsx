@@ -76,13 +76,7 @@ function showcardfun(){
         }}
         placeholder="Search....."
       />
-    <div className=' btn-secondary'
-    style={{
-      fontSize:"larger",
-      marginLeft:100,
-      marginBottom:10
-    }}
-    >
+    <div className='Card-table ' >
       <button className={`btn btn-success ${isActivec?'active':''}`} onClick={ ()=>{
         setIsActivec(true)
         setIsActivet(false)

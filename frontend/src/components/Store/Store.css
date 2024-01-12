@@ -3,6 +3,14 @@
   margin: 0;
   box-sizing: border-box;
 }
+.Card-table{
+  position: fixed;
+  z-index: 100;
+  background:#eee;
+right: 0;
+  font-size:larger;
+margin:-45px 10px 10px 0px
+}
 .searchBar {
   position: fixed;
   width: 400px;
@@ -27,7 +35,8 @@ outline:none;
   grid-template-columns: 1fr 1fr 1fr ;
   column-gap: 30px;
   row-gap: 30px;
-  margin-left: 100px;
+  margin-left: 69px;
+  margin-top: 20px;
   
 }
 ::-webkit-scrollbar {
@@ -218,6 +227,7 @@ font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans
 }
 table {
   width: 100%;
+  margin-top: 20px;
 }
 
 th, td {
