@@ -1,26 +1,33 @@
 .dashboard-container{
   margin-left: 100px;
 }
+.amount{
+  border-top:1px solid green;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
 .total{
   margin-left: 100px;
   display:flex;
   justify-content: space-around;
   flex: 1;
   flex-wrap: wrap;
-  gap: 9px;
+  gap:9px;
 }
 .totalAmount{
   border:1px solid green;
   border-radius: 7px;
-  font-size: 20px;
-  width: 450px;
+  font-size: 30px;
+  width: 400px;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
 }
 
 .totalAmount p:first-child{
   
-  font-size: 30px;
+  font-size: 20px;
   color: green;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -139,4 +146,5 @@ margin-left: 100px;
     row-gap: 10px;
   }
 }
+
 

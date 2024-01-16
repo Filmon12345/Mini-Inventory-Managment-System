@@ -11,6 +11,7 @@ import Store from './components/Store/Store'
 import EditPage from './components/EditPage/EditPage'
 import Sell from './components/Sell/Sell'
 import Electronics from './components/Electronics/Electronics'
+import Category from './components/Category/Category';
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
           <Route path="/edit-product/:Id?" element={<EditPage />} />
           <Route path="/sell-product/:Id?/:name?/:price?/:amount?/" element={<Sell />} />
           <Route path='/see/:productType?' element={<Electronics/>}/>
+          <Route path='/cat' element={<Category/>}/>
 
 
          </Routes>
