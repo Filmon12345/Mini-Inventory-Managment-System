@@ -69,7 +69,16 @@ Quick access to essential features, such as adding new items, viewing stock leve
    
 4. Mobile Responsiveness:
    Ensure that the application is accessible and user-friendly on various devices, including mobile phones and tablets.
+   
+# This project was built using these technologies.
 
+          React.js(Framework)
+          Node.js(backend)
+          mongoDB(database)
+          Express.js
+          Bootstrap(styling)
+          VsCode
+        
 
 Getting Started
 Prerequisites
