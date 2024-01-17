@@ -80,6 +80,7 @@ function Add() {
                 <option value="Electrical Tools">Electrical Tools</option>
                 <option value="Electronics">Electronics</option>
                 <option value="Clothes">Clothes</option>
+                <option value="others">others</option>
               </select>
             </div>
 

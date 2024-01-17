@@ -125,7 +125,7 @@ function Dashboard() {
             >
               {" "}
               <div>
-                <div className="  ">
+                <div>
                   <h1 className="title">Mechanical Tools</h1>
                 </div>
               </div>
@@ -156,6 +156,18 @@ function Dashboard() {
                 <div>
                   <h1 className="title">Clothes</h1>
                 </div>
+              </div>
+            </a>
+             <a
+              className="catagory"
+              href={`/see/${navparams}`}
+              onClick={() => {
+                Setnavparams("others");
+              }}
+            >
+              {" "}
+              <div>
+                <h1 className="title">Others</h1>
               </div>
             </a>
           </div>
