@@ -18,12 +18,12 @@ function Sell() {
       .then((response) => response.json())
       .then((data) => setinfo(data));
     console.log(info);
-  }, [Id]);
+  }, [Id, info]);
 
   const sendSell = async (e) => {
     e.preventDefault();
     const confirmed = window.confirm(
-      `Are you sure you want to Sell ${sold} ${info.name}?`
+      `Are you Sure you Want to Sell ${sold}  ${info.name}?`
     );
     if (!confirmed) {
       return;
