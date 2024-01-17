@@ -47,14 +47,7 @@ function Dashboard() {
 
   return (
     <div>
-      <input
-        className="search-product"
-        type="text"
-        placeholder="Search A Product"
-        onChange={(e) => {
-          Setsearch(e.target.value);
-        }}
-      />
+      
       <div>
         <div className=" total">
           <div className="totalAmount">
