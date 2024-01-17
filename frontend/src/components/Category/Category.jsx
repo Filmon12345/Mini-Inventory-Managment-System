@@ -2,11 +2,11 @@
 import React, { useState } from "react";
 import "../../bootstrap.css";
 import "./Category.css";
-import fashion from "../../img/fashion.jpeg";
+import Mechanical from "../../img/Mech.jpg";
 import electronics from "../../img/electronics.jpg";
-import cosmo from "../../img/cosmo.jpeg";
-import book from "../../img/book.jpg";
-import fur from "../../img/fur.jpg";
+import clothes from "../../img/clothes.jpeg";
+import others from "../../img/others.png";
+import Electrical from "../../img/Elec.jpg";
 import main_cat from "../../img/main_category.png";
 function Category() {
   const [navparams, Setnavparams] = useState("");
@@ -27,7 +27,7 @@ function Category() {
         href={`/see/${navparams}`}
       >
         <div className="con">
-            <img  src={fashion} alt="" />
+            <img  src={Mechanical} alt="" />
             <h1 className="titles">Mechanical Tools</h1>
         </div>
       </a>
@@ -52,7 +52,7 @@ function Category() {
         href={`/see/${navparams}`}
       >
         <div  className="con">
-        <img  src={fur} alt="" />
+        <img  src={Electrical} alt="" />
           <h1 className="titles">Electrical Tools</h1>
         </div>
       </a>
@@ -66,7 +66,7 @@ function Category() {
       >
         <div  className="con">
 
-            <img  src={cosmo} alt="" />
+            <img  src={clothes} alt="" />
         
           <h1 className="titles">Clothes</h1>
         </div>
@@ -79,7 +79,7 @@ function Category() {
         href={`/see/${navparams}`}
       >
         <div className="con">
-          <img  src={book} alt="" />
+          <img  src={others} alt="" />
           <h1 className="titles">Others</h1>
         </div>
       </a>

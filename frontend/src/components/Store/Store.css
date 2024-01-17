@@ -3,6 +3,7 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 .Card-table{
   position: fixed;
   z-index: 100;
@@ -43,6 +44,7 @@ outline:none;
   margin-left: 69px;
   padding-top: 5px;
   margin-top: 15px;
+ 
   
 }
 ::-webkit-scrollbar {
@@ -268,7 +270,7 @@ font-size: 14px;
   
 
   .card-container{
-    grid-template-columns: 300px;
-    margin-left: 100px;
+    grid-template-columns: 290px;
+    margin-left: 60px;
   }
 }

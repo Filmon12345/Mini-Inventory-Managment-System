@@ -44,10 +44,10 @@ box-shadow: 1px 4px 3px rgb(0,0,0,0.3);
   }
   .con .titles{ 
     position: relative;
-    bottom: 7.5rem;
+    bottom: 9rem;
     z-index: -1; 
    border: 1px #eee solid;
-   box-shadow: 1px 3px 5px rgb(0, 0, 0,0.5);
+   box-shadow: 1px 3px 5px rgb(0, 0, 0,0.3);
    background-color: transparent;
 
   }
@@ -57,3 +57,35 @@ box-shadow: 1px 4px 3px rgb(0,0,0,0.3);
     transition: 0.5s;
   
 }
+/* 
+@media(max-width:1190px){
+
+
+  }
+  @media(max-width:1016px){
+   
+  } */
+  @media(max-width:800px){
+   
+  .con img{
+  
+    width:300px;
+    height: 150px;
+
+  }
+  .con .titles{ 
+ 
+    bottom: 5rem;
+   box-shadow: 1px 3px 4px rgb(0, 0, 0,0.3);
+font-size: 24px;
+
+  }
+  .list{
+ 
+    margin-left: 60px;
+    column-gap: 20px;
+    row-gap: 10px;
+    width: 70vw;
+    place-content: center;
+}
+  }
