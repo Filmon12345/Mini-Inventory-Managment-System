@@ -31,9 +31,10 @@ padding: 10px 10px 0px 0px;
   right: 0;
 border: 1px solid #aeabae;
 outline:none;
+
 }
 .searchBar::placeholder{
-  font-size:smaller;
+  
   opacity: 0.5;
 }
 .card-container {

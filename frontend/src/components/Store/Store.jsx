@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 import { toast } from 'react-toastify';
 // import axios from 'axios';
 function Store() {
-  const [search, Setsearch] = useState('');
+  
   const [showtable, Setshowtable] = useState('d-none');
   const [showcard,Setshowcard] = useState('');
   const [data,Setdata] = useState([]);
@@ -68,14 +68,7 @@ function showcardfun(){
 }
   return (
     <div className="card-wrapper">
-      <input
-        className="searchBar"
-        type="text"
-        onChange={(e) => {
-          Setsearch(e.target.value);
-        }}
-        placeholder="Search....."
-      />
+      
     <div className='Card-table ' >
       <button className={`btn btn-success ${isActivec?'active':''}`} onClick={ ()=>{
         setIsActivec(true)
@@ -87,13 +80,7 @@ function showcardfun(){
         showtablefun()}}>Products Table</button>
     </div>
       <div className={`${showcard} card-container row`}>
-        {data
-          .filter((items) =>
-            search.toLowerCase() === ""
-              ? items
-              : items.name.toLowerCase().includes(search)
-          )
-          .map((i, index) => {
+        {data.map((i, index) => {
             const cardstatus = i.amount > 40 ? "SUFFICIENT" : "INSUFFICIENT";
             const status = i.amount > 40 ? "SUFFICIENT" : "INSUFFICIENT";
             return (
