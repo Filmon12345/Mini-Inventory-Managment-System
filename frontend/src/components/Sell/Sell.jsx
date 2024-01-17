@@ -1,29 +1,35 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useState} from "react";
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
+import React, { useEffect, useState } from "react";
+import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
 import "./Sell.css";
-import { useParams ,useNavigate} from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 function Sell() {
-  const { Id, name, price, amount } = useParams();
-const navigate = useNavigate();
-  console.log(price);
-
+  const { Id } = useParams();
   const [sold, setSold] = useState("");
-  const total = sold * price;
-  async function sendSell(e) {
-    e.preventDefault();
-    try {
+  const [info, setinfo] = useState({});
+  const navigate = useNavigate();
 
-      toast.success('Product Sold Successfully',{autoClose:1000})
-      setTimeout(()=>{
-        navigate('/see-store');
-      },1000)
-        
-      
-    
-     
+  useEffect(() => {
+    fetch(`http://localhost:8000/Products/get/${Id}`, {
+      method: "GET",
+    })
+      .then((response) => response.json())
+      .then((data) => setinfo(data));
+    console.log(info);
+  }, [Id]);
+
+  const sendSell = async (e) => {
+    e.preventDefault();
+    const confirmed = window.confirm(
+      `Are you sure you want to Sell ${sold} ${info.name}?`
+    );
+    if (!confirmed) {
+      return;
+    }
+
+    try {
       const response = await fetch(
         `http://localhost:8000/Products/sell/${Id}`,
         {
@@ -35,44 +41,74 @@ const navigate = useNavigate();
             sold,
           }),
         }
-      );  
-     
+      );
 
       if (response.ok) {
-        console.log("Item Edited Successfully");
+        toast.success("Item sold successfully", {
+          autoClose: 2000,
+          onClose: setTimeout(() => {
+            navigate("/see-store");
+          }, 3000),
+        });
 
         // Handle success, e.g., display a success message
       } else {
-        console.error("Failed to Edit item");
+        toast.error("Failed to sell item");
         // Handle failure, e.g., display an error message
       }
     } catch (err) {
+      toast.error("An error occurred while selling the item");
       console.error("Error:", err);
       // Handle other errors, e.g., display an error message
     }
-  }
+  };
+  const tax = sold * info.price * 0.15;
+  const total = sold * info.price + tax;
 
   return (
-    <div className="sell-wrapper">
-      <form className="sell-form">
-        <div className="title">
-        <p>{amount} {name}s in Stock</p>
-        </div>
+    <div className="sell-container">
+      <h1>{info.name}</h1>
+      <form className=" sell-form d-flex gap-5">
+        <div  className=" sell-upper-form ">
+          <div>
+            <label >Amount in Stock :</label>{" "}
+            <span >{info.amount}</span>
+          </div>
 
-      <div className="sells title">
-        <p className="price">Price of 1 Hp = {price} * </p>
-          <input
-            className="amount"
-            type="number"
-            id="sellAmount"
-            onChange={(e) => setSold(e.target.value)}
-            placeholder="Amount..."
+          <div>
+            <label >Price: </label>{" "}
+            <span > {info.price} Birr</span> <br />
+          </div>
+          <div>
+            <label htmlFor="sellAmount ">Enter Amount to be Sold :</label>{" "}
+            <input
+              className="amount"
+              type="number"
+              onChange={(e) => setSold(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="">Tax(15%) : </label>
+            <span> {tax} birr</span>
+          </div>
+
+          <div>
+            <label htmlFor=""> Total:</label> 
+            <span>{total} birr</span>
+          </div>
+        </div>
+        <div className=" image-form ">
+          <img
+            className="sell-image"
+            src={`http://localhost:8000/images/${info.image}`}
+            alt=""
           />
-           <p>Total:{total}</p>
-        <button onClick={sendSell}>Sell</button>
-      </div>
-     
+        </div>
       </form>
+      <button className="btn btn-success px-4 " onClick={sendSell}>
+        Sell
+      </button>
     </div>
   );
 }
