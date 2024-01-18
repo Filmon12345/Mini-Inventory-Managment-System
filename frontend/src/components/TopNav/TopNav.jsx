@@ -33,7 +33,7 @@ function TopNav() {
           <input
             className=" searchBar search "
             type="text"
-            placeholder="  search ..."
+            placeholder="Search ..."
             onChange={(e) => {
               Setsearch(e.target.value);
             }}
